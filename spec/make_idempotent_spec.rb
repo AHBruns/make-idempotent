@@ -32,7 +32,6 @@ RSpec.describe MakeIdempotent do
         # only 25% request gets to the server
         raise MakeIdempotent::InconclusiveRequestError unless rand() > 0.75
 
-        # every request gets to the server
         result = server_api[:query].call(id)
 
         # only 0.01% of responses get back
